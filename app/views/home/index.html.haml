@@ -1,2 +1,69 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.jumbotron
+  .container.landing-image-container
+    .row
+      .col-xs-12.carousel
+        %h1 Because exercises will make you perfect
+        %img{:src => "img/image2.png", :title => "Landing"}/
+  .container.steps
+    .row
+      .col-xs-12.col-sm-6.col-md-3
+        %a.step{:href => "/installing-cli"}
+          .circle-outer
+            .circle-inner
+              .hex.hex-small
+                %span.step-number 1
+              %i.step-icon.install-cli
+          %p.step-name Install CLI
+      .col-xs-12.col-sm-6.col-md-3
+        - if current_user and !current_user.guest?
+          %a.step{:href => "/getting-started#fetch"}
+        - else
+          %a.step{:href => "/getting-started#login"}
+        .circle-outer
+          .circle-inner
+            .hex.hex-small
+              %span.step-number 2
+            %i.step-icon.work-exercise
+        %p.step-name Work on Exercises
+      .col-xs-12.col-sm-6.col-md-3
+        %a.step{:href => "/submit-assignment"}
+          .circle-outer
+            .circle-inner
+              .hex.hex-small
+                %span.step-number 3
+              %i.step-icon.submit-iteration
+          %p.step-name Submit Iteration
+      .col-xs-12.col-sm-6.col-md-3
+        %a.step{:href => "#"}
+          .circle-outer
+            .circle-inner
+              .hex.hex-small
+                %span.step-number 4
+              %i.step-icon.get-reviews
+          %p.step-name Get Reviews
+.container.languages
+  %h2 We have tons of exercises for you. In your favorite languages!!
+  .row
+    .col-xs-12.col-sm-6.col-md-3
+      %a.lang{:href => "/java-exercises"}
+        .hex.blue.hex-big
+          %i.java
+        %p.lang-name Java
+        %p.view-exercises View Exercises
+    .col-xs-12.col-sm-6.col-md-3
+      %a.lang{:href => "/javascript-exercises"}
+        .hex.yellow.hex-big
+          %i.javascript
+        %p.lang-name Javascript
+        %p.view-exercises View Exercises
+    .col-xs-12.col-sm-6.col-md-3
+      %a.lang{:href => "/ruby-exercises"}
+        .hex.red.hex-big
+          %i.ruby
+        %p.lang-name Ruby
+        %p.view-exercises View Exercises
+    .col-xs-12.col-sm-6.col-md-3
+      %a.lang{:href => "#"}
+        .hex.purple.hex-big
+          %i.upcoming
+        %p.lang-name Coming Soon...
