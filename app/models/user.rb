@@ -3,6 +3,22 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable, :registerable, :recoverable, :rememberable
   devise :database_authenticatable, :trackable, :validatable, :omniauthable, omniauth_providers: [:github]
 
+  has_many :submissions
+  has_many :alerts
+  has_many :notifications
+  has_many :comments
+  has_many :exercises, class_name: "UserExercise"
+  has_many :lifecycle_events, ->{ order 'created_at ASC' }, class_name: "LifecycleEvent"
+
+  has_many :management_contracts, class_name: "TeamManager"
+  has_many :managed_teams, through: :management_contracts, source: :team
+  has_many :team_memberships, ->{ where confirmed: true }, class_name: "TeamMembership"
+  has_many :teams, through: :team_memberships
+  has_many :unconfirmed_team_memberships, ->{ where confirmed: false }, class_name: "TeamMembership"
+  has_many :unconfirmed_teams, through: :unconfirmed_team_memberships, source: :team
+
+
+
   after_create :create_lifecycle_event
 
   def self.from_omniauth(auth)
