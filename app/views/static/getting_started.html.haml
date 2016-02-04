@@ -12,7 +12,7 @@
           %a{:href => "#download"} 2. Download CLI
         %li
           %a{:href => "#configure"} 3. Configure CLI
-        - if !current_user.guest?
+        - if current_user and !current_user.guest?
           %li
             %a{:href => "#fetch"} 4. Fetch Exercises
           %li
@@ -23,7 +23,7 @@
         .panel-step 1
         .panel-body
           .row
-            - if !current_user.guest?
+            - if current_user and !current_user.guest?
               .col-sm-4.col-sm-offset-4.text-center.text-success
                 %span.fa.fa-check-circle.fa-fw{:style => "font-size:10em"}
               .row
@@ -61,7 +61,7 @@
         .panel-body
           .row
             .col-sm-12
-              - if !current_user.guest?
+              - if current_user and !current_user.guest?
                 %p
                   Configure the CLI to use your API key in a
                   %strong.text-danger new Terminal Session
@@ -84,7 +84,7 @@
                   %a{:href => "/login"} log in
                   to get your API key.
       / Fetch
-      - if !current_user.guest?
+      - if current_user and !current_user.guest?
         #fetch.panel.panel-default
           .panel-step 4
           .panel-body
@@ -101,7 +101,7 @@
                   %code $HOME/hootcode
                   directory.
       / Fetch
-      - if !current_user.guest?
+      - if current_user and !current_user.guest?
         #next-steps.panel.panel-default
           .panel-step
             %span.fa.fa-chevron-circle-right.fa-fw

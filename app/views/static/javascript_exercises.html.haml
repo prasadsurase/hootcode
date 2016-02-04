@@ -1,0 +1,18 @@
+.container.about
+  %section.page-header
+    %h1 JavaScript Exercises
+  %section.main
+    %article
+      %p JavaScript is a dynamic computer programming language. It is most commonly used as part of Web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed.
+  %section.main.col-md-8
+    %article.article-block
+      .article-contents
+        %ul
+          - @problems.each do |name|
+            %li
+              %h4{:style => "display: inline-block;"}
+                %b
+                  %a{:href => "/exercises/javascript/#{name}/readme", :target => "_blank"}
+                    = name.capitalize.gsub("-"," ").split.map(&:capitalize).join(' ')
+              %a.btn.btn-default.btn-sm.pull-right{:href => "/nitpick/javascript/#{name}"}
+                %i.fa.fa-info

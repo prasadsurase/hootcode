@@ -8,12 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   devise_for :users, controllers: { omniauth_callbacks: "callbacks" }, skip: []
-  resource :static do
-    collection do
-      get :getting_started
-      get :faq
-    end
-  end
+  get ':action' => 'static#:action'
 
 
   # Example of regular route:

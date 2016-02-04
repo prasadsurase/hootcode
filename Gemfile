@@ -69,6 +69,6 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'bundler-audit'
-  gem 'rails_db'
+  #gem 'rails_db'
   gem "erb2haml"
 end

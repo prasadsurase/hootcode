@@ -1,0 +1,335 @@
+// Bootstrap Overrides
+/**
+
+    TODO:
+    - Reduce selector specificity.
+
+**/
+@import 'libraries/variables';
+@import 'themes/hootcode';
+h1, h2 {
+  color: #c66606;
+}
+
+/*Footer Links*/
+.footer-container .nav a:hover {
+  color:#fff;
+}
+
+// The entire above sections must be removed somehow.. in fact this entire
+// stylesheets
+
+html {
+  min-height:100%;
+  position:relative;
+}
+
+body {
+  padding-bottom: 8em;
+}
+
+.header {
+  height:390px;
+  background:#fff url(image-path('bg_header_big.png')) repeat-x;
+  -ms-background-position-y:-50px;
+      background-position-y:-50px;
+}
+footer {
+  position:absolute;
+  bottom:0;
+  background:#fff url(image-path("bg_footer.png")) repeat-x;
+  width:100%;
+  height:50px;
+  line-height:50px;
+}
+
+.landing-image-container {
+  margin-top:-325px;
+}
+
+.navbar {
+  -webkit-transition:0.3s;
+       -o-transition:0.3s;
+          transition:0.3s;
+}
+.navbar-brand {
+  padding:0;
+}
+.navbar.scrolled {
+  box-shadow:0 2px 6px 0 rgba(0,0,0,0.3);
+}
+
+.steps {
+  margin-top:40px;
+  margin-bottom:30px;
+}
+
+.lang .hex {
+  margin:0 auto;
+}
+
+.step,
+.languages .lang {
+  display:block;
+  width:100%;
+  height:228px;
+  position:relative;
+  margin:auto;
+  max-width:256px;
+  /*background-color:  #E1E1E1;*/
+  padding-top:50px;
+}
+
+.step:hover,
+.lang:hover {
+  background-color:#eee;
+  text-decoration:none;
+}
+
+.lang:visited {
+  text-decoration:none;
+}
+
+.step:hover .step-name {
+  display:block;
+}
+
+
+.jumbotron h1 {
+  font-size:4em;
+  text-align:center;
+}
+
+.see-how {
+  font-size:0.8em;
+}
+
+.step-icon {
+  width:60px;
+  height:60px;
+  background-color:#0de5f4;
+  margin-top:18px;
+  display:inline-block;
+}
+
+.step-number {
+  color:#f1f1f1;
+  display:inline-block;
+  margin:-8px auto 0 auto;
+  font-size:2em;
+}
+
+.step-icon.install-cli {
+  background:url(image-path("install-cli.png")) center no-repeat;
+}
+
+.step:hover .step-icon.install-cli {
+  background:url(image-path("install-cli.gif")) center no-repeat;
+}
+
+.step-icon.work-exercise {
+  background:url(image-path("work-exercise.png")) center no-repeat;
+}
+
+.step:hover  .step-icon.work-exercise {
+  background:url(image-path("work-exercise.gif")) center no-repeat;
+}
+
+.step-icon.submit-iteration {
+  background:url(image-path("submit-iteration.png")) center no-repeat;
+}
+
+.step:hover .step-icon.submit-iteration {
+  background:url(image-path("submit-iteration.gif")) center no-repeat;
+}
+
+.step-icon.get-reviews {
+  background:url(image-path("get-reviews.png")) center no-repeat;
+}
+
+.step:hover .step-icon.get-reviews {
+  background:url(image-path("get-reviews.gif")) center no-repeat;
+}
+
+.lang:hover .view-exercises {
+  display:block;
+}
+
+.lang .view-exercises {
+  display:none;
+  font-size:13px;
+  color:#7c7c7c;
+  text-align:center;
+  text-decoration:underline;
+  margin-top:-7px;
+}
+
+.step .step-name,
+.lang .lang-name {
+  font-size:21px;
+  /*font-weight: bold;*/
+  color:#7c7c7c;
+  text-align:center;
+}
+
+.languages .lang .hex {
+  margin-bottom:46px;
+}
+
+.lang i {
+  width:80px;
+  height:80px;
+  display:inline-block;
+  margin-top:-5px;
+}
+
+.java {
+  background:url(image-path("java.png")) no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.ruby {
+  background:url(image-path("ruby.png")) no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.javascript {
+  background:url(image-path("javascript.png")) no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.upcoming {
+  background:url(image-path("upcoming.png")) no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.languages {
+  margin-bottom:50px;
+}
+/* using icon fonts would be better.*/
+.navbar-link-icon {
+  margin-right:5px
+}
+.navbar-link-icon+.badge {
+  margin-top:-5px;
+  margin-left:-5px;
+}
+
+@font-face {
+  font-family:"As cute as heavy";
+  src: url(font-path('font.ttf'));
+}
+
+.landing-image-container h1 {
+  font-family:"As cute as heavy";
+  margin-bottom:20px;
+  color:#fff;
+  font-size:42px;
+}
+
+.languages h2 {
+  color:#cf7320;
+  text-align:center;
+  margin-bottom:35px;
+  font-family:"As cute as heavy";
+  font-size:26px;
+}
+.landing-image-container .carousel {
+  text-align:center;
+}
+
+footer {
+  color:#fff;
+  font-size: .8em;
+}
+
+footer a {
+  color:#ddd;
+  text-decoration:none;
+}
+footer a:hover {
+  color:#fff;
+}
+
+.landing-image-container img {
+  max-width:100%;
+}
+
+/*======================================
+=            Navbar Submenu            =
+======================================*/
+
+
+/*=======================================
+=            Temporary Fixes            =
+=======================================*/
+
+#git-tree-content {
+  overflow-x: auto;
+  border:1px solid #ccc;
+}
+
+/*-----  End of Temporary Fixes  ------*/
+
+.page-get-started {
+  font-size:18px;
+}
+/*======================================
+=            Fancy Terminal            =
+======================================*/
+
+.fancy-terminal {
+  margin:20px 0;
+  padding:30px 10px 10px;
+  background: #333;
+  font-family:$font-family-monospace;
+  border-radius:6px;
+  background-image: linear-gradient(#ddd 0, #aaa 20px,#333 20px);
+}
+
+.fancy-terminal p {
+  color:lighten($hootcode-brand, 20%);
+  font-weight:bold;
+  margin:10px;
+}
+.fancy-terminal p:before {
+  content:"~ ";
+  color:cyan;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*-----  End of Fancy Terminal  ------*/
+
+.instruction-cards {
+  font-size:18px;
+}
+.instruction-cards .panel {
+  margin-bottom:4em;
+  position: relative;
+}
+.instruction-cards .panel-body {
+  padding:4em;
+}
+.panel-step {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(206, 107, 5);
+  left: -25px;
+  border-radius: 50%;
+  top: -25px;
+  box-shadow: 2px 2px 4px 0 rgba(0,0,0,.3);
+  text-align: center;
+  line-height: 50px;
+  font-size: 32px;
+  color: #fff;
+}
+.hootcode-banner {
+  background:url(image-path('bg_header_big.png'));
+  color:#fff;
+  text-shadow:1px 1px rgba(0,0,0,.4);
+}
+#faq-nav {
+  margin-top:30px;
+  position:fixed;
+}
