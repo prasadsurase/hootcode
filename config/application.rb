@@ -1,7 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require '/home/prasad/learn/demo_rack/custom_logger'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -27,7 +26,5 @@ module Hootcode
     config.generators do |g|
       g.test_framework :minitest, spec: true
     end
-
-    config.middleware.use "CustomLogger", "Custom Logger"
   end
 end

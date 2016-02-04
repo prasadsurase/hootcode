@@ -1,0 +1,115 @@
+.jumbotron.hootcode-banner
+  .container.page-get-started
+    %h1.text-center Get Started
+    %p.text-center A step wise guide to get you set up with Hootcode CLI &amp; Online Account
+.container
+  .row
+    .col-sm-2
+      %ul#get-started-nav.nav.nav-pills.nav-stacked
+        %li
+          %a{:href => "#login"} 1. Log In
+        %li
+          %a{:href => "#download"} 2. Download CLI
+        %li
+          %a{:href => "#configure"} 3. Configure CLI
+        - if !current_user.guest?
+          %li
+            %a{:href => "#fetch"} 4. Fetch Exercises
+          %li
+            %a{:href => "#next-steps"} 5. Next Steps
+    .col-sm-10.instruction-cards
+      / Log In With GitHub
+      #login.panel.panel-default
+        .panel-step 1
+        .panel-body
+          .row
+            - if !current_user.guest?
+              .col-sm-4.col-sm-offset-4.text-center.text-success
+                %span.fa.fa-check-circle.fa-fw{:style => "font-size:10em"}
+              .row
+                .col-sm-12
+                  .alert.alert-success.text-center
+                    You are logged in. Great! Go ahead and
+                    %a{:href => "#download"} Download
+                    the CLI.
+            - else
+              .col-sm-4.col-sm-offset-4.text-center
+                %span.fa.fa-github.fa-fw{:style => "font-size:10em"}
+                %a.btn.btn-primary.btn-lg.btn-block{:href => "/login"} Log In
+      / Download CLI
+      #download.panel.panel-default
+        .panel-step 2
+        .panel-body
+          .row
+            .col-sm-12
+              %p
+                Head over to the terminal and download the CLI in
+                = succeed "." do
+                  %code /usr/local/bin/
+              .fancy-terminal
+                %p sudo su
+                %p curl -L http://hootcode.com/downloads/hootcode &gt; /usr/local/bin/hootcode
+                %p chmod +x /usr/local/bin/hootcode
+              / <p>If you wist to install it somewhere else, <a href="/help#downloading-cli">follow these instructions</a>.</p>
+              %p
+                Go ahead and
+                %a{:href => "#configure"} configure
+                the CLI.
+      / Configure
+      #configure.panel.panel-default
+        .panel-step 3
+        .panel-body
+          .row
+            .col-sm-12
+              - if !current_user.guest?
+                %p
+                  Configure the CLI to use your API key in a
+                  %strong.text-danger new Terminal Session
+                  %strong
+                    (
+                    %code sudo
+                    isn't required ).
+                .fancy-terminal
+                  %p
+                    hootcode configure --key=
+                    %em{"data-placement" => "top", "data-toggle" => "tooltip", :title => "Your API Key"}= current_user.key
+                %p
+                  You can always find your API key in the
+                  %a{:href => "/account"} account
+                  page.
+              - else
+                %p.text-center
+                  %span.fa.fa-exclamation-triangle.text-danger
+                  You must
+                  %a{:href => "/login"} log in
+                  to get your API key.
+      / Fetch
+      - if !current_user.guest?
+        #fetch.panel.panel-default
+          .panel-step 4
+          .panel-body
+            .row
+              .col-sm-12
+                %p
+                  Fetch exercises for
+                  = succeed "." do
+                    %a{:href => "/about"} supported languages
+                .fancy-terminal
+                  %p hootcode fetch java
+                %p
+                  By default, all the fetched exercises can be found in
+                  %code $HOME/hootcode
+                  directory.
+      / Fetch
+      - if !current_user.guest?
+        #next-steps.panel.panel-default
+          .panel-step
+            %span.fa.fa-chevron-circle-right.fa-fw
+          .panel-body
+            .row
+              .col-sm-12
+                %p You are now ready to work on the exercises locally.
+                %p
+                  Once you are ready to submit, follow these
+                  = succeed "." do
+                    %a{:href => "/faq#commit-to-github"} next steps

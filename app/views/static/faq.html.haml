@@ -1,0 +1,332 @@
+.container
+  .row
+    .col-sm-4
+      %ul#faq-nav.nav.nav-pills.nav-stacked
+        %li{:role => "presentation"}
+          %a{:href => "#what-is-hootcode"} What is Hootcode
+        %li{:role => "presentation"}
+          %a{:href => "#install"} Installing Hootcode CLI
+        %li{:role => "presentation"}
+          %a{:href => "#configure"} Configuring CLI
+        %li{:role => "presentation"}
+          %a{:href => "#fetch"} Fetching Exercises
+        %li{:role => "presentation"}
+          %a{:href => "#available-lang-and-exercises"} Available Language &amp; Exercises
+        %li{:role => "presentation"}
+          %a{:href => "#working"} Working on Exercises
+        %li{:role => "presentation"}
+          %a{:href => "#commit-to-github"} Committing to GitHub
+        %li{:role => "presentation"}
+          %a{:href => "#submit"} Submitting an Exercise
+        %li{:role => "presentation"}
+          %a{:href => "#iterations-and-exercises"} Iterations &amp; Exercises
+        %li{:role => "presentation"}
+          %a{:href => "#api-key"} The API Key
+    .col-sm-8
+      #what-is-hootcode
+        %h2#what-is-hootcode- What is Hootcode?
+        %p Hootcode is a platform that helps you get mentored on exercises on different languages.
+        %h3#how-does-it-help- How does it help?
+        %ul
+          %li It promotes learning by doing.
+          %li It makes you learn the best practices and how to organize your projects.
+          %li It helps you connect to like-minded people.
+          %li It provides you with plethora of solutions to each problem so you can learn better.
+        %h3#what-can-i-do- What can I do?
+        %ul
+          %li
+            %strong Practice
+            \- You can work of various exercises and submit them in iterations.
+          %li
+            %strong Get mentored
+            \- You get comments and guidance from fellow developers on how you can make your code better.
+          %li
+            %strong Help someone get better
+            \- You can also provide comments to other developers on how they can write better code. You also get to learn just by doing that.
+          %li
+            %strong Repeat
+        %h3#let-s-get-started-get-started-
+          Let's
+          %a{:href => "/getting-started", :target => "_blank"} Get Started!
+      %hr
+        #install
+          %h2 Installing Hootcode CLI
+          %p Hootcode CLI( Command Line Interface ) let's you fetch and submit exercises from your system's terminal. In fact, you'll do most Hootcode operations from the terminal.
+          %h3 Automated Installation( Recommended )
+          %p
+            Make sure you have
+            %code curl
+            installed. If not, you can install it as follows.
+          %p
+            %strong Linux :
+          .fancy-terminal
+            %p sudo apt-get install curl
+          %p
+            %strong
+              OSX( via
+              %a{:href => "http://brew.sh/"} homebrew
+              ) :
+          .fancy-terminal
+            %p brew install curl
+          %p Now install the CLI.
+          .fancy-terminal
+            %p sudo su
+            %p curl -L http://hootcode.com/downloads/hootcode &gt; /usr/local/bin/hootcode
+            %p chmod +x /usr/local/bin/hootcode
+          %p
+            This installs the hootcode binary in
+            %code /usr/local/bin
+            directory.
+          %h3 Verify Installation
+          .fancy-terminal
+            %p hootcode -v
+          %h3 Manual Installation
+          %p
+            If you wish to install it in a different place other than
+            = succeed "," do
+              %code /usr/local/bin
+            = succeed "." do
+              %a{:href => "https://www.google.co.in/webhp?sourceid=chrome-instant=1=2=UTF-8#q=how+to+add+directory+to+path"} add it to PATH
+        %hr
+          #configure
+            %h2 Configuring CLI
+            %p
+              After you have downloaded the CLI, you need to configure it with your API key so you can submit exercises. Once you login with GitHub, your API key can be found in the
+              %a{:href => "/account", :target => "_blank"} Account
+              page.
+            .alert.alert-danger
+              %strong
+                Heads up!
+                %code sudo
+                is not required.
+            .fancy-terminal
+              %p hootcode configure --key=YOUR_API_KEY
+            %p
+              The configuration resides in a
+              %code .hootcode.json
+              file in your home directory. You can choose to edit it manually to add your API key but it's recommended you use the command line.
+          %hr
+            #fetch
+              %h2 Fetching Exercises
+              %h3 For a Specific Language
+              .fancy-terminal
+                %p hootcode fetch java
+              %p
+                This downloads the
+                %strong first exercise
+                available for
+                %strong Java
+                inside
+                %code $HOME/hootcode
+                directory by default.
+              %p
+                You can find the list of currently supported language
+                = succeed "." do
+                  %a{:href => "/about"} here
+              %p You can even see the supported language on the command line.
+              .fancy-terminal
+                %p hootcode tracks
+              %h3 A Specific Exercise
+              %p You can download a specific exercise by providing the exercise name in the fetch command.
+              .fancy-terminal
+                %p hootcode fetch LANGUAGE EXERCISE
+              %p To get a list of available exercises available for a language, run:
+              .fancy-terminal
+                %p hootcode list LANGUAGE
+              %h3 For All Supported Languages
+              .fancy-terminal
+                %p hootcode fetch
+              %p Not specifying a language during fetch will download the first problem for all supported languages.
+              %h3 Fetching the Next Exercise
+              %p
+                Once you are done with an exercise and you want to download the next exercise, simply run
+                %code hootcode fetch
+                or
+                = succeed "." do
+                  %code hootcode fetch LANGUAGE
+            %hr
+              #available-lang-and-exercises
+                %h2 Available Languages  Exercises
+                %p To get a list of languages supported by Hootcode, run:
+                .fancy-terminal
+                  %p hootcode tracks
+                %p This lists all the languages, with their slug and the number of exercises available for each of them.
+                %p To get a list of exercises available in a particular language, run:
+                .fancy-terminal
+                  %p hootcode list LANGUAGE
+                %p
+                  %strong Note :
+                  LANGUAGE is the slug for a particular language. E.g -
+                  %strong java
+                  for Java or
+                  %strong ruby
+                  for Ruby.
+              %hr
+                #working
+                  %h2 Working on Exercises
+                  %h3 Find Exercises
+                  %p
+                    By default, all the downloaded exercises reside in
+                    %code $HOME/hootcode
+                    directory in your system.
+                  %h3 Write Code
+                  %p You can use any editor or tool you want to work on exercises locally. Example - Use Eclipse or IntelliJ IDEA for Java exercises. Try to follow best practices as much as you can. If you miss something, mentors are here to guide.
+                  %h3 Test
+                  %p With certain exercises, you may also find files to write test cases. Writing code along with tests is recommended. Use TDD or BDD style, whatever suits you better.
+                  %p
+                    Different exercises, however, will require you to have the testing environment set up properly. These instructions can be found in the project specific
+                    %code README.md
+                    file.
+                  %h3 Use .gitignore
+                  %p
+                    Since the primary medium for maintaining iterations will be GitHub, try to add a
+                    %code .gitignore
+                    file to save yourself from committing files you probably don't want to. Example -
+                    %code .class
+                    files, generated directories etc.
+                  %p
+                    More on
+                    %code .gitignore
+                    = succeed "." do
+                      %a{:href => "http://git-scm.com/docs/gitignore"} here
+                %hr
+                  #commit-to-github
+                    %h2 Committing to GitHub
+                    %p All the code for all iterations are managed via GitHub repositories. If you don't know about git or GitHub, follow the below resources to get a head start.
+                    %ul
+                      %li
+                        %a{:href => "https://git-scm.com/book/en/v2/Getting-Started-Git-Basics"} Getting Started - Git Basics
+                      %li
+                        %a{:href => "https://git-scm.com/book/en/v2"} Git SCM - Book
+                      %li
+                        %a{:href => "https://guides.github.com/"} GitHub Guides
+                    %h3 Initialize
+                    %p
+                      You need to initialize the exercise directory as a git repository before you can do further operations. Go to the exercise root(
+                      %code> ~/hootcode/LANGUAGE/EXERCISE_NAME
+                      ) and run:
+                    .fancy-terminal
+                      %p git init
+                    %h3 Commit Code
+                    %p
+                      Write code within
+                      %code /src
+                      directory. This is
+                      %strong.text-danger important
+                      for
+                      %strong SonarQube Code Analysis
+                      to work correctly.
+                    %p Once you have worked on exercise and are ready to commit, go to the root directory of the exercise and stage the files you want to commit.
+                    .fancy-terminal
+                      %p
+                        git add path/to/file/to/commit.ext
+                    %p Now commit the code with a nice, meaningful message.
+                    .fancy-terminal
+                      %p git commit -m "COMMIT_MESSAGE"
+                    %h3 Push to GitHub Repository
+                    %p
+                      Create
+                      %strong.text-danger
+                        %em an empty repository
+                      in your GitHub account with the same name as the exercise. Assuming the exercise and GitHub repository name is
+                      = succeed "," do
+                        %code file-browser
+                      = succeed "," do
+                        %strong origin
+                    .fancy-terminal
+                      %p
+                        git remote add origin
+                        %em https://github.com/USERNAME/file-browser.git
+                    %p Now, push the local commits to the GitHub repository.
+                    .fancy-terminal
+                      %p git push origin master
+                    %p
+                      This assumes you are working on the
+                      %strong master
+                      branch.
+                    %p
+                      Voila! You are now ready to
+                      = succeed "." do
+                        %a{:href => "#submit"} submit your exercise to Hootcode
+                  %hr
+                    #submit
+                      %h2 Submitting an Exercise
+                      %p
+                        Once you have
+                        = succeed "," do
+                          %a{:href => "#commit-to-github"} pushed your code to GitHub
+                      %h3 Find Commit Hash
+                      %p Assuming you have committed all your changes, run any of the following to get the latest commit hash.
+                      .fancy-terminal
+                        %p git log -1
+                      %p
+                        %strong OR
+                      .fancy-terminal
+                        %p git rev-parse HEAD
+                      %p Copy the commit hash which will be required in the next step.
+                      %h3 Submitting
+                      %p Now that you have the commit hash, go to the root of the exercise you want to submit and run:
+                      .fancy-terminal
+                        %p hootcode gsubmit COMMIT_HASH
+                      %p If the submit is successful, the terminal should show give you a URL to the submission.
+                    %hr
+                      #iterations-and-exercises
+                        %h2 Iterations  Exercises
+                        %p Iterations are the way you learn, improve your skills and finish an exercise on Hootcode. Every time you submit an exercise, an iteration is created on Hootcode.
+                        %p A particular iteration refers to the code related to a particular commit hash provided during the submission via command line.
+                        %h3 Where to find iterations?
+                        %p
+                          The
+                          %a{:href => "/account", :target => "_blank"} Account
+                          page lists all the exercises you have worked upon so far with the current iteration number. You can also click on a particular exercise name which takes you to the details of the submission including the files, code and the comments you have got for the iteration.
+                        %h3 Iterations Comments
+                        %p Each iteration has it's own thread of comments. Mentors look at your current work and provide their feedback on a specific iteration.
+                        %h3 How to mark an exercise complete?
+                        %ul
+                          %li
+                            Go to
+                            %a{:href => "/account", :target => "_blank"} Account
+                            page.
+                          %li Find the exercise you want to complete and click on the name.
+                          %li
+                            In the submission details page, Click on
+                            %strong Manage
+                            and select
+                            = succeed "." do
+                              %strong Mark as done
+                          %li
+                            If you wish to delete the current submission, Click on
+                            = succeed "." do
+                              %strong Delete
+                        %h3 How to find other submissions on an exercise?
+                        On the submission details page, Click on the
+                        %strong binoculars
+                        %i.fa.fa-binoculars
+                        button to view submissions by others on the same exercise.
+                      %hr
+                        #api-key
+                          %h2 The API Key
+                          %p The API key is your identity on Hootcode. All submission require the Hootcode CLI to be configured with it.
+                          %h3 How to get an API key?
+                          %p
+                            All you have to do is to
+                            %a{:href => "/login", :target => "_blank"} login
+                            with GitHub and an API key will be generated for you.
+                          %h3 Where can I find it?
+                          %p
+                            You can find your API key in the
+                            %a{:href => "/account", :target => "_blank"} Account
+                            page.
+                          %h3 How to configure the CLI with an API key?
+                          %p
+                            Go through the
+                            %a{:href => "#configure"} Configuring CLI
+                            section for details.
+                          %h3 Can I change it?
+                          %p
+                            Absolutely! You can reset it in the
+                            %a{:href => "/account", :target => "_blank"} Account
+                            page and get a new one.
+                          %p
+                            %strong> Note :
+                            Once you change it, you must configure your CLI with the new API key for submissions to work properly.

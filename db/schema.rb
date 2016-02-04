@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203122410) do
+ActiveRecord::Schema.define(version: 20160204074012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "alerts", force: :cascade do |t|
     t.integer  "user_id"
+    t.text     "text"
+    t.string   "url"
+    t.string   "link_text"
+    t.boolean  "read"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +58,15 @@ ActiveRecord::Schema.define(version: 20160203122410) do
 
   add_index "likes", ["submission_id"], name: "index_likes_on_submission_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
+
+  create_table "log_entries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "log_entries", ["user_id"], name: "index_log_entries_on_user_id", using: :btree
 
   create_table "muted_submissions", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -134,9 +147,15 @@ ActiveRecord::Schema.define(version: 20160203122410) do
   end
 
   create_table "user_exercises", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",         null: false
+    t.string   "language"
+    t.string   "slug"
+    t.integer  "iteration_count"
+    t.string   "state"
+    t.datetime "completed_at"
+    t.string   "key"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "user_exercises", ["user_id"], name: "index_user_exercises_on_user_id", using: :btree
@@ -169,6 +188,7 @@ ActiveRecord::Schema.define(version: 20160203122410) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "submissions"
   add_foreign_key "likes", "users"
+  add_foreign_key "log_entries", "users"
   add_foreign_key "muted_submissions", "submissions"
   add_foreign_key "muted_submissions", "users"
   add_foreign_key "notifications", "users"

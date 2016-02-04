@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     uid.to_i if uid
   end
 
+  def guest?
+    false
+  end
+
   private
 
   def create_lifecycle_event

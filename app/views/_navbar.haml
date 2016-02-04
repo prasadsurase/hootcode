@@ -1,0 +1,62 @@
+%nav.navbar.navbar-default.navbar-fixed-top.primary-nav
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"}
+        %img{:height => "50px", :src => "/img/logo.svg"}/
+    #navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "/getting-started"}
+            %span.fa.fa-play-circle.fa-lg.navbar-link-icon.fa-fw>
+            Get Started
+        /
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span class="nav-links help"></span>
+          Help&nbsp;<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+          <li><a href="/submitter-workflow">Submitter Workflow</a></li>
+          <li><a href="/reviewer-workflow">Reviewer Workflow</a></li>
+          <li class="dropdown-submenu"><a tabindex="-1" href="#">Manage Assignment</a>
+          <ul class="dropdown-menu">
+          <li><a href="/create-assignment">Create Assignment</a></li>
+          <li><a href="/">Update Assignment</a></li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+        %li
+          %a{:href => "/faq"}
+            %span.fa.fa-question-circle.fa-lg.navbar-link-icon.fa-fw>
+            FAQ
+        %li.dropdown
+          %a#drop-exercises.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Exercises
+            %b.caret
+          %ul#menu-exercises.dropdown-menu{"area-labelledby" => "drop-exercises", :role => "menu"}
+            %li
+              %a{:href => "/java-exercises", :role => "menuitem"}
+                %span.navbar-link-icon.fa-fw>
+                Java
+            %li
+              %a{:href => "/javascript-exercises", :role => "menuitem"}
+                %span.navbar-link-icon.fa-fw>
+                Javascript
+        - if !current_user.guest?
+          = erb :"application/nav/nitpicker_languages"
+          = erb :"application/nav/teams"
+          = erb :"application/nav/notifications"
+          = erb :"application/nav/account"
+        - else
+          %li
+            %a{:href => "/login"}
+              %span.fa.fa-github.fa-lg.navbar-link-icon.fa-fw>
+              Log In
+        - if settings.development?
+          = erb :"application/nav/backdoor"
+    / /.nav-collapse
