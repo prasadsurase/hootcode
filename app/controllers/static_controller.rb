@@ -6,11 +6,14 @@ class StaticController < ApplicationController
   end
 
   def java_exercises
+    @problems = Xapi::Config.find('java').problems
   end
 
   def ruby_exercises
+    @problems = Xapi::Config.find('javascript').problems
   end
 
   def javascript_exercises
+    @problems = Xapi::Config.find('ruby').problems
   end
 end

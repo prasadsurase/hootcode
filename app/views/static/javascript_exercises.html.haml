@@ -8,11 +8,11 @@
     %article.article-block
       .article-contents
         %ul
-          - @problems.each do |name|
+          - @problems.each do |problem|
             %li
-              %h4{:style => "display: inline-block;"}
+              %h4{style: "display: inline-block;"}
                 %b
-                  %a{:href => "/exercises/javascript/#{name}/readme", :target => "_blank"}
-                    = name.capitalize.gsub("-"," ").split.map(&:capitalize).join(' ')
-              %a.btn.btn-default.btn-sm.pull-right{:href => "/nitpick/javascript/#{name}"}
+                  %a{href: "/exercises/javascript/#{problem.slug}/readme", target: "_blank"}
+                    = problem.name.capitalize.gsub("-"," ").split.map(&:capitalize).join(' ')
+              %a.btn.btn-default.btn-sm.pull-right{href: "/nitpick/javascript/#{problem.slug}"}
                 %i.fa.fa-info
