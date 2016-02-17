@@ -1,0 +1,10 @@
+- if nitpicker_languages.any?
+  %li.dropdown
+    %a#drop-nitpick.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      Nitpick
+      %b.caret
+    %ul#menu-nitpick.dropdown-menu{"area-labelledby" => "drop-nitpick", :role => "menu"}
+      - nitpicker_languages.each do |language|
+        %li
+          %a{:href => "#{path_for(language)}", :role => "menuitem", :tabindex => "-1"}
+            = Language.of(language) || language

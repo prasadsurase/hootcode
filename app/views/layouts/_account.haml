@@ -1,0 +1,22 @@
+%li.dropdown
+  %a#drop-account.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    = gravatar_tag current_user.avatar_url, size: 20
+    = current_user.username
+    %b.caret
+  %ul.dropdown-menu{:role => "menu"}
+    %li
+      %a{:href => "/account", :role => "menuitem"}
+        %span.navbar-link-icon.fa.fa-user.fa-fw>
+        Account
+    %li
+      %a{:href => "/nits/#{current_user.username}/stats", :role => "menuitem"}
+        %span.navbar-link-icon.fa.fa-thumb-tack.fa-fw>
+        Nit Stats
+    %li
+      %a{:href => "/looks", :role => "menuitem"}
+        %span.navbar-link-icon.fa.fa-eye.fa-fw>
+        Recents
+    %li
+      %a{:href => "/logout", :role => "menuitem"}
+        %span.navbar-link-icon.fa.fa-sign-out.fa-fw>
+        Log Out

@@ -20,4 +20,8 @@ module ApplicationHelper
     end
     nil
   end
+
+  #def assumable_users
+  #  AssumableUser.all
+  #end
 end

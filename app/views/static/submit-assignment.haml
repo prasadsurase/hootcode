@@ -1,0 +1,54 @@
+%br/
+.container.about
+  .title
+    %h1 Submit Assignment
+  %br/
+  %section
+    %p
+      After you've
+      %a{:href => "/getting-started#fetch"} fetched the exercises
+      and written an implementation, then you're ready to submit the code to HootCode to receive feedback.
+    %p
+      You need to submit the code through
+      = succeed "." do
+        %code Github
+    /
+      <div class="title">
+      <h2>Submit Assignment using DB</h2>
+      </div>
+      <pre><code class="lang-bash">hootcode submit path/to/your/code.ext</code></pre>
+      <p>For example, if you have been working on the <code>leap</code> exercise in Ruby, you might be in the same directory as the test suite and the code:</p>
+      <pre><code class="lang-bash">cd ~/hootcode/ruby/leap
+      ls -1</code></pre>
+      <p>This would output the following:</p>
+      <pre><code>leap<span class="variable">.rb</span>
+      leap_test<span class="variable">.rb</span>
+      README<span class="variable">.md</span></code></pre>
+      <p>Then you would submit the code with the following command:</p>
+      <pre><code class="lang-bash">hootcode submit leap.rb</code></pre>
+    .title
+      %h2 Steps to submit assignment
+    %p 1) Create a Github repository in the name(case-sensitive) of the assignment and clone it.
+    %p
+      For example, if your assignment is
+      %code web-crawler
+      under java, then the url should be as
+      - if current_user and !current_user.guest?
+        %code>
+          git@github.com/#{current_user.username}/web-crawler
+        \.
+      - else
+        %code> git@github.com/github-username/web-crawler
+        \.
+    %p
+      2) Copy the contents of Exercise Folder and Create file(s) in the repository under
+      %code src/
+      folder, consisting the solution for the exercise.
+    %p 3) Commit the file(s) and push the changes to github.
+    %p 4) Copy the latest commit-id
+    %p
+      5) Go to the exercise folder (eg ~/hootcode/java/web-crawler) and submit the commit-id to hootcode using
+    %pre
+      hootcode gsubmit commit-id
+      eg: hootcode gsubmit aeb9c67gh3j6k78fdgth
+    %p 6) You can make your changes in the github repository and  follow the steps 3 to 5 to reflect the same in Hootcode.

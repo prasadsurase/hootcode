@@ -7,13 +7,13 @@
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand{:href => "/"}
-        %img{:height => "50px", :src => "/img/logo.svg"}/
+        = image_tag 'logo.svg', height: '50px'
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         %li
           %a{:href => "/getting-started"}
             %span.fa.fa-play-circle.fa-lg.navbar-link-icon.fa-fw>
-            Get Started
+            Get Startedd
         /
           <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span class="nav-links help"></span>
@@ -40,23 +40,23 @@
             %b.caret
           %ul#menu-exercises.dropdown-menu{"area-labelledby" => "drop-exercises", :role => "menu"}
             %li
-              %a{:href => "/java_exercises", :role => "menuitem"}
+              %a{:href => "/java-exercises", :role => "menuitem"}
                 %span.navbar-link-icon.fa-fw>
                 Java
             %li
-              %a{:href => "/javascript_exercises", :role => "menuitem"}
+              %a{:href => "/javascript-exercises", :role => "menuitem"}
                 %span.navbar-link-icon.fa-fw>
                 Javascript
-        - if !current_user.guest?
-          = erb :"application/nav/nitpicker_languages"
-          = erb :"application/nav/teams"
-          = erb :"application/nav/notifications"
-          = erb :"application/nav/account"
+        - if current_user and !current_user.guest?
+          = render "layouts/nitpicker_languages"
+          = render "layouts/teams"
+          = render "layouts/notifications"
+          = render "layouts/account"
         - else
           %li
             %a{:href => "/login"}
               %span.fa.fa-github.fa-lg.navbar-link-icon.fa-fw>
               Log In
-        - if settings.development?
-          = erb :"application/nav/backdoor"
+        - if Rails.env.development?
+          = render "layouts/backdoor"
     / /.nav-collapse

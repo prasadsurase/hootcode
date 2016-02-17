@@ -1,0 +1,30 @@
+%br/
+.container.about
+  .title
+    %h1 Installing the CLI on Linux
+  %br/
+  %section
+    %pre
+      %code.lang-bash
+        :preserve
+          sudo su
+          curl -L http://hootcode.com/downloads/hootcode > /usr/local/bin/hootcode; chmod +x /usr/local/bin/hootcode     .alert.alert-danger
+      %p
+        %i.fa.fa-exclamation-triangle
+        Read it before you run it, people.
+    %p
+      By default, the installer will try to put it in
+      %code /usr/local/bin/
+      or
+      = succeed "." do
+        %code $HOME/bin/
+    %p If you'd like it to live somewhere else, you can specify it up front:
+    %pre
+      %code.lang-bash DIR=/path/to/bin ./install
+    %p
+      One more step ahead to get Hootcode configured. Here is the configuration
+      %a{:href => "/onboarding/install-cli"} link
+    %p
+  %b Note:
+  Test whether hootcode installed successfully or not by typing the command
+  %b "hootcode -v"

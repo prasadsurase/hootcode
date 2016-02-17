@@ -1,0 +1,10 @@
+- if (current_user.teams | current_user.managed_teams).any?
+  %li.dropdown
+    %a#drop-current.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      Your Teams
+      %b.caret
+    %ul#menu-current.dropdown-menu{"area-labelledby" => "drop-current", :role => "menu"}
+      - (current_user.teams | current_user.managed_teams).each do |team|
+        %li
+          %a{:href => "/teams/#{team.slug}", :role => "menuitem", :tabindex => "-1"}
+            = team.name
