@@ -1,0 +1,56 @@
+.container.about
+  %section.page-header
+    %h1 About
+  %section.main
+    %article
+      %p
+        Hootcode is a platform for crowdsourcing mentorship on projects, also commonly referred to as Nitpicking within the platform. It is based on the the popular
+        %a{:href => "http://exercism.io"} exercism.io
+        project by
+        = succeed "." do
+          %a{:href => "https://github.com/kytrinyx"} Katrina Owen
+    %article.article-block
+      .article-contents
+        %h2
+          Languages
+        %p
+          Exercises are currently available for:
+        %ul
+          %li Java
+          %li Ruby
+        We are in the process of adding support for JavaScript.
+        /
+          <p>
+          If you want to help make this happen more quickly, join us on <a href="https://github.com/hanumakanthvvn/x-api/tree/master/problems">GitHub</a>.
+          </p>
+    %hr/
+    %article.article-block
+      .article-contents
+        %h2
+          Open Source
+        %p
+          Hootcode.com is free and Open Source and is being developed by Engineers at
+          = succeed "." do
+            %a{:href => "http://www.imaginea.com"} Imaginea
+          %a{:href => "http://exercism.io"} exercism.io
+          project by
+          %a{:href => "https://github.com/kytrinyx"} Katrina Owen
+        %p
+          The
+          %a{:href => "https://github.com/hanumakanthvvn/exercism.io/", :target => "blank"} website prototype
+          is written in Ruby using the Sinatra web framework. It is licensed under the GNU Affero General Public License.
+        %p
+          The
+          %a{:href => "https://github.com/hanumakanthvvn/exercism.io/", :target => "blank"} command-line client
+          is written in Go, with the MIT license.
+        %p
+          An overwhelmingly large number of people have
+          = succeed "." do
+            %a{:href => "https://github.com/hanumakanthvvn/exercism.io/graphs/contributors", :target => "blank"} contributed to the codebase
+        %p An even larger number of people have contributed through participation; by completing exercises and participating in the discussions about code.
+    %hr/
+    %article.article-block
+      .article-contents
+        %h2 Future
+        %p Hootcode is still a prototype, and we are always experimenting with the basic feature set. The goal is to develop a V1 of the product from scratch using everything that we've learned building and using the prototype.
+        %p The V1 will be built using well-known frameworks and conventions to minimize the barrier to contributing.

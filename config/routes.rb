@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "callbacks" }, skip: []
   get ':action' => 'static#:action'
+  resources :exercises do 
+    collection do
+      #get ':exercises/:language/:track/readme'
+    end
+  end
+      get '/exercises/:language/:track/readme', to: 'exercises#readme'
 
 
   # Example of regular route:
