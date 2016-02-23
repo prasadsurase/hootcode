@@ -93,3 +93,4 @@ class Hibernation
   end
 end
 
+end

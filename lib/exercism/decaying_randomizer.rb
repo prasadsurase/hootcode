@@ -1,3 +1,4 @@
+module Exercism
 class DecayingRandomizer
 
   def initialize(upper)
@@ -19,4 +20,5 @@ class DecayingRandomizer
     4.times.collect { rand }.reduce(:+) / 4
   end
 
+end
 end

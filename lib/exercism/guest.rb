@@ -1,3 +1,4 @@
+module Exercism
 class Guest
   def id
   end
@@ -51,3 +52,4 @@ class Guest
   end
 end
 
+end

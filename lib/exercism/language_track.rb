@@ -1,3 +1,4 @@
+module Exercism
 class LanguageTrack
   attr_reader :language
   def initialize(language)
@@ -21,4 +22,5 @@ class LanguageTrack
       status, body = Xapi.get('tracks')
       JSON.parse body
     end
+end
 end

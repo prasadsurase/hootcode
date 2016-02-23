@@ -44,3 +44,4 @@ class Participants
   end
 
 end
+end

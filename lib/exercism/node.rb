@@ -1,3 +1,4 @@
+module Exercism
 # {:path=>"README.txt",
 #    :mode=>"100644",
 #    :type=>"blob",
@@ -54,4 +55,5 @@ class Node
   def path_names
     node.path.split("/")
   end
+end
 end

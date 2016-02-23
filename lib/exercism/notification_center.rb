@@ -1,3 +1,4 @@
+module Exercism
 class NotificationCenter
   attr_reader :notifications
 
@@ -13,4 +14,5 @@ class NotificationCenter
     notification = notifications.find_by(id: id)
     notification.destroy if notification
   end
+end
 end

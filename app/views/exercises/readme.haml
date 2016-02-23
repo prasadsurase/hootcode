@@ -1,0 +1,11 @@
+%header
+  = render 'layouts/navbar'
+.container
+  %section.page-header
+    %h1
+      README:
+      %small
+        = @problem.name
+        in
+        = @problem.language
+  != @text #equivalent to @text.html_safe

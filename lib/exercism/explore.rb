@@ -1,3 +1,4 @@
+module Exercism
 module Explore
   class Conversation
     def self.load(path)
@@ -31,4 +32,5 @@ module Explore
       @code, @language, @comments, @number = code, language, comments, number
     end
   end
+end
 end

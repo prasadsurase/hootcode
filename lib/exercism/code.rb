@@ -1,3 +1,4 @@
+module Exercism
 
 class Exercism
   class UnknownLanguage < StandardError; end
@@ -30,4 +31,5 @@ class Code
   def path_segments
     @path_segments ||= path.split(/\/|\\/).reject(&:empty?)
   end
+end
 end

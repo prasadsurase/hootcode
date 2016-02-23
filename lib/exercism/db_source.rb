@@ -1,3 +1,4 @@
+module Exercism
 class DbSource
   attr_reader :submission
 
@@ -9,4 +10,5 @@ class DbSource
   def solution
     submission.solution
   end
+end
 end

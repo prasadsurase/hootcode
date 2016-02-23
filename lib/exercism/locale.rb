@@ -1,3 +1,4 @@
+module Exercism
 class UnknownLocale
   attr_reader :file, :extension
   def initialize(file, extension)
@@ -28,4 +29,5 @@ Locale = Struct.new(:language, :code_extension, :test_extension) do
   def to_s
     language
   end
+end
 end

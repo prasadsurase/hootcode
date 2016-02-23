@@ -1,5 +1,3 @@
-require 'exercism/xapi'
-
 class Attempt
 
   attr_reader :user, :code, :track, :slug, :filename, :iteration
@@ -71,3 +69,4 @@ class Attempt
   class InvalidAttemptError < StandardError; end
 end
 
+end

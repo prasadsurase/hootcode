@@ -36,7 +36,9 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
-gem "haml-rails", "~> 0.9"
+gem 'haml-rails', '~> 0.9'
+gem 'redcarpet'
+gem 'loofah'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -70,5 +72,5 @@ group :development do
   gem 'rails_layout'
   gem 'bundler-audit'
   #gem 'rails_db'
-  gem "erb2haml"
+  gem 'erb2haml'
 end

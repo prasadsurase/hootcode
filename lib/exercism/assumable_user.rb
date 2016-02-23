@@ -1,3 +1,4 @@
+module Exercism
 class AssumableUser
   class Identity
 
@@ -22,4 +23,5 @@ class AssumableUser
       Identity.new(user.username, user.github_id, user.onboarding_steps)
     }.sort_by(&:progress).reverse
   end
+end
 end

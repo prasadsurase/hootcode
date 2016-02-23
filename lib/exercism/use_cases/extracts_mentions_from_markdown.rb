@@ -32,3 +32,4 @@ class ExtractsMentionsFromMarkdown
   end
 
 end
+end

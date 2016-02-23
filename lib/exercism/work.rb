@@ -1,3 +1,4 @@
+module Exercism
 class Work
   attr_reader :user
 
@@ -63,4 +64,5 @@ class Work
     end
 
   end
+end
 end

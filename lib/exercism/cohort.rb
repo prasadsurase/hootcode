@@ -1,3 +1,4 @@
+module Exercism
 
 module Exercism
   class Cohort
@@ -57,4 +58,5 @@ module Exercism
     end
 
   end
+end
 end

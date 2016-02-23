@@ -1,5 +1,3 @@
-require 'forwardable'
-
 module Xapi
   # Iteration is a user's solution to a specific problem in a given track.
   class Iteration

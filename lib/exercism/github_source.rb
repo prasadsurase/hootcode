@@ -1,3 +1,4 @@
+module Exercism
 class GithubSource
   attr_reader :submission, :tree_source
 
@@ -20,4 +21,5 @@ class GithubSource
   def trees
     tree_source.tree.select { |node| node.type == "tree" }
   end
+end
 end

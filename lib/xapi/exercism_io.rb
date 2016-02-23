@@ -1,6 +1,3 @@
-require 'faraday'
-require 'json'
-
 module Xapi
   class ApiError < StandardError; end
 

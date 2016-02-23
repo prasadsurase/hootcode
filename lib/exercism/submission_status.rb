@@ -1,3 +1,4 @@
+module Exercism
 class SubmissionStatus
   DONE_STATE = 'done'
   WORKING_STATES = %w(pending needs_input)
@@ -66,3 +67,4 @@ class SubmissionStatus
 
 end
 
+end

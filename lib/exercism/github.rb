@@ -1,3 +1,4 @@
+module Exercism
 module Github
   def self.login_url(client_id)
     "https://github.com/login/oauth/authorize?client_id=#{client_id}"
@@ -42,4 +43,5 @@ module Github
       c.password = "pramati123"
     end
   end
+end
 end

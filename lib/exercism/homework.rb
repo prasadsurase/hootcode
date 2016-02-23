@@ -1,3 +1,4 @@
+module Exercism
 class Homework
   attr_reader :user
   def initialize(user)
@@ -17,4 +18,5 @@ class Homework
       exercises[row['language']] << {"slug" => row["slug"], "state" => row["state"]}
     }
   end
+end
 end

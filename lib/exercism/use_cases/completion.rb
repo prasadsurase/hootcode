@@ -28,3 +28,4 @@ class Completion
     end
   end
 end
+end

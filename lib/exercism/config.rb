@@ -1,4 +1,4 @@
-class Exercism
+module Exercism
   class Config
     def self.tracks
       {

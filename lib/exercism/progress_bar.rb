@@ -1,3 +1,4 @@
+module Exercism
 class ProgressBar
   StepInstall = "install-cli"
   StepSubmit = "submit-code"
@@ -20,4 +21,5 @@ class ProgressBar
       "todo"
     end
   end
+end
 end

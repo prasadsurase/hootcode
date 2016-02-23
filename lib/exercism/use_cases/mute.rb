@@ -14,3 +14,4 @@ class Mute
     submission.save
   end
 end
+end

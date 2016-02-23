@@ -1,3 +1,4 @@
+module Exercism
 module Xapi
   def self.exercises_api_url
     ENV.fetch('EXERCISES_API_URL') { "http://localhost:9292" }
@@ -31,4 +32,5 @@ module Xapi
     req = request(*path_segments)
     [req.status, req.body]
   end
+end
 end

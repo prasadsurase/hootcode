@@ -35,3 +35,4 @@ class Unsubmit
     Hack::UpdatesUserExercise.new(submission.user_id, submission.track_id, submission.slug).update
   end
 end
+end

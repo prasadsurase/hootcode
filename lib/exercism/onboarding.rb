@@ -1,3 +1,4 @@
+module Exercism
 class Onboarding
   def self.progression
     %w(
@@ -48,4 +49,5 @@ class Onboarding
       ProgressBar::StepExplore
     end
   end
+end
 end

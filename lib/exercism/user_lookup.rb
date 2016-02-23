@@ -1,3 +1,4 @@
+module Exercism
 class UserLookup
   def initialize(params)
     @params = params
@@ -32,4 +33,5 @@ class UserLookup
   def submission
     Submission.find_by(key: @params[:submission_key])
   end
+end
 end

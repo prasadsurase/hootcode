@@ -1,10 +1,11 @@
-require 'delegate'
-class NullSubmission < SimpleDelegator
-  def liked?
-    false
-  end
+module Exercism
+  class NullSubmission < SimpleDelegator
+    def liked?
+      false
+    end
 
-  def code
-    ''
+    def code
+      ''
+    end
   end
 end

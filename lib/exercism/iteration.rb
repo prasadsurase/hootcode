@@ -1,3 +1,4 @@
+module Exercism
 class Iteration
   attr_reader :solution, :test_analysis, :code_analysis, :track, :slug
 
@@ -24,4 +25,5 @@ class Iteration
   # def slug
   #   paths.map(&:slug).group_by {|k| k}.sort_by {|k, v| v.size}.last.first
   # end
+end
 end

@@ -1,3 +1,4 @@
+module Exercism
 class Nitstats
   def initialize(user)
     @user = user
@@ -66,4 +67,5 @@ class Nitstats
     (from..to).map { |d| results[d.to_s].to_i }
   end
 
+end
 end

@@ -38,3 +38,4 @@ module Stats
     end
   end
 end
+end
